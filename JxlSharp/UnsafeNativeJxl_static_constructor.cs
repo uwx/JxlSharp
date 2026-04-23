@@ -61,7 +61,7 @@ namespace JxlSharp
             }
 
             var executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
-            string assemblyPath = Path.GetDirectoryName(executingAssembly.Location);
+            string assemblyPath = Path.GetDirectoryName(executingAssembly.Location) ?? AppContext.BaseDirectory;
             string libPath = Path.Combine(assemblyPath, "lib");
             string archPath = Path.Combine(libPath, arch);
             string dllName = Path.Combine(archPath, inputDllName);
